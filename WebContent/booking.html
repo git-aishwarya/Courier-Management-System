@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script>
+    function validatebill(){
+
+    var airwayno = document.myForm.a1;
+    var rrcompany = document.myForm.r1;
+    var rrcontact = document.myForm.r2;
+    var rraddress = document.myForm.r3;
+    var rrcountry = document.myForm.r4;
+    var rrcity = document.myForm.r5;
+    var rrpostal = document.myForm.r6;
+    var rrphone = document.myForm.r7;
+    var sscompany = document.myForm.s1;
+    var sscontact = document.myForm.s2;
+    var ssaddress = document.myForm.s3;
+    var sscountry = document.myForm.s4;
+    var sscity = document.myForm.s5;
+    var sspostal = document.myForm.s6;
+    var ssphone = document.myForm.s7;
+    var amount = document.myForm.g4;
+    var weigth = document.myForm.g2;
+    var pickup = document.myForm.g5;
+
+
+    if (airwayno.value == "")
+        {
+            window.alert("Empty airway bill no field.");
+            airwayno.focus();
+            return false;
+        }
+
+    if (rrcompany.value == "")
+        {
+            window.alert("Empty company name field in receiver section.");
+            rrcompany.focus();
+            return false;
+        }
+    if (rrcontact.value == "")
+        {
+            window.alert("Empty contact name field in receiver section.");
+            rrcontact.focus();
+            return false;
+        }
+    if (rraddress.value == "")
+        {
+            window.alert("Empty address field in receiver section.");
+            rraddress.focus();
+            return false;
+        }
+    if (rrcountry.value == "")
+        {
+            window.alert("Empty country field in receiver section.");
+            rrcountry.focus();
+            return false;
+        }
+    if (rrcity.value == "")
+        {
+            window.alert("Empty city field in receiver section.");
+            rrcity.focus();
+            return false;
+        }
+    if (rrpostal.value == "")
+        {
+            window.alert("Empty postal code field in receiver section.");
+            rrpostal.focus();
+            return false;
+        }
+    if (rrphone.value == "")
+        {
+            window.alert("Empty phone no field in receiver section.");
+            rrphone.focus();
+            return false;
+        }
+
+
+    if (sscompany.value == "")
+        {
+            window.alert("Empty company name field in sender section.");
+            sscompany.focus();
+            return false;
+        }
+    if (sscontact.value == "")
+        {
+            window.alert("Empty contact name field in sender section.");
+            sscontact.focus();
+            return false;
+        }
+    if (ssaddress.value == "")
+        {
+            window.alert("Empty address field in sender section.");
+            ssaddress.focus();
+            return false;
+        }
+    if (sscountry.value == "")
+        {
+            window.alert("Empty country field in sender section.");
+            sscountry.focus();
+            return false;
+        }
+    if (sscity.value == "")
+        {
+            window.alert("Empty city field in sender section.");
+            sscity.focus();
+            return false;
+        }
+    if (sspostal.value == "")
+        {
+            window.alert("Empty postal code field in sender section.");
+            sspostal.focus();
+            return false;
+        }
+    if (ssphone.value == "")
+        {
+            window.alert("Empty phone no field in sender section.");
+            ssphone.focus();
+            return false;
+        }
+    if (pickup.value == "")
+        {
+            window.alert("Empty picked up field.");
+            pickup.focus();
+            return false;
+        }
+
+    if (amount.value == "" || amount.value=="NaN")
+        {
+            window.alert("Empty total amount field.");
+            weigth.focus();
+            return false;
+        }
+
+
+
+    var regExp = /cms((\d){8})/g;
+    if(!regExp.test(document.myForm.a1.value)){
+    alert('Invalid Airway bill no! \n\n Please enter a valid Airway bill no (e.g cms12345678)');
+    return;
+    }
+
+    var regExp1 = /\D/g;
+    if(regExp1.test(document.myForm.r6.value)){
+    alert('Invalid Postal Code! \n\n Please enter a valid postal code in receiver section.');
+    return;
+    }
+
+    var regExp2 = /\D/g;
+    if(regExp2.test(document.myForm.r7.value)){
+    alert('Invalid Phone number! \n\n Please enter a valid phone number in receiver section.');
+    return;
+    }
+
+
+    var regExp3 = /\D/g;
+    if(regExp3.test(document.myForm.s6.value)){
+    alert('Invalid Postal Code! \n\n Please enter a valid postal code in sender section.');
+    return;
+    }
+
+    var regExp4 = /\D/g;
+    if(regExp4.test(document.myForm.s7.value)){
+    alert('Invalid Phone number! \n\n Please enter a valid phone number in sender section.');
+    return;
+    }
+
+
+    document.myForm.submit();
+    }
+
+    function mul(obj)
+    {
+    var a,b,c,d;
+    a = parseInt(obj.form.elements['g2'].value) * parseInt(obj.form.elements['g3'].value);
+    b=a*15/100;
+    c=a+b;
+    d=c*20/100;
+    obj.value=c-d;
+    if(obj.value == "NaN")
+    {
+    alert("Please enter valid numbers");
+    }
+    }
+    </script>
+
+    <script language="javascript">
+    <!--
+    function init(){
+    var months = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+    var xf = document.getElementById("f1")
+    var xDate = new Date();
+    var xMonth = months[xDate.getMonth()];
+    var xDay = xDate.getDate();
+    var xYear = xDate.getYear();
+
+    xf.value = xMonth + " " + xDay + ", " + xYear;
+    }
+    </script>
+
+
+    <style>
+        body {
+            overflow: hidden;
+            background-color: #F7F7F7;
+            overflow-y : auto;
+        }
+
+        /* right content (Navigation) */
+        .left-body {
+            background-color: #4DAB80;
+            text-align: center;
+            color: white;
+            height: 120vh;
+        }
+
+        .left-body .nav-section .nav-header {
+            padding: 30px;
+            margin-bottom: 55px;
+        }
+
+        .left-body .nav-body .nav-items .items {
+            padding: 4px 10px 4px 65px;
+            margin-bottom: 30px;
+        }
+
+        .left-body .nav-body .nav-items .items a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .left-body .nav-body .nav-items .items:hover {
+            background-color: #52BA98;
+        }
+
+        .left-body .nav-body .nav-items {
+            list-style-type: none;
+            padding: 0%;
+        }
+
+        .left-body .nav-body .nav-items {
+            text-align: left;
+        }
+
+        /* left content  card (shadow)*/
+        .box {
+            width: 100%;
+            height: 100%;
+            border: 1px solid transparent;
+            border-radius: 0%;
+            box-shadow: -1px 2px 17px 3px rgba(0, 0, 0, 0.32);
+
+        }
+
+        .right-body {
+            position: relative;
+            top: 2%;
+            left: 8%;
+            margin: auto;
+            text-align: center;
+            color: #52BA98;
+            z-index: 1;
+        }
+
+        .input-item {
+            width: 300px;
+            border: none;
+            border-bottom: 1px solid #52BA98;
+            border-radius: 0%;
+            margin-bottom: 8px
+        }
+.text-item{
+            width: 300px;
+            border: 1px solid #52BA98;
+            border-radius: 0%;
+            margin-bottom: 8px
+	}
+
+        .input-item:focus {
+            outline-width: 0;
+        }
+.text-item:focus {
+            outline-width: 0;
+        }
+
+        .input-item::placeholder {
+            color: #B7E4D5;
+            font-size: 12px;
+        }
+.text-item::placeholder {
+            color: #B7E4D5;
+            font-size: 12px;
+        }
+
+        .btn-frm {
+            border: 1px solid transparent;
+            background-color: #4DAB80;
+            border-radius: 18px;
+            padding: 4px 28px;
+            color: white;
+            margin-right: 28px;
+        }
+
+        .right-content {
+            text-align: center;
+        }
+
+        .right-heading {
+            margin-top: 50px;
+            margin-bottom: 55px;
+        }
+
+        .form-btn {
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .image {
+            transform: translate(-10px,280px);
+            width: 45%;
+            background-image: url(background.jpeg);
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+    </style>
+    <title>Information Page</title>
+</head>
+
+<body onload="init();">
+
+    <div class="fluid-container">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-2">
+                    <section class="left-body">
+                        <div class="nav-section">
+                            <div class="nav-header">
+                                <h7>Friends & Corp</h7>
+                            </div>
+                            <div class="nav-body">
+                                <ul class="nav-items">
+                                  <li class="items"><a href="customer_homepage.jsp">Home</a></li>
+                                  <li class="items"><a href="customer_profile.jsp">Profile</a></li>
+                                  <li class="items"><a href="booking.html">Book Order</a></li>
+                                  <li class="items"><a href="trackid.html">Track Order</a></li>
+                                  <li class="items"><a href="cancel_order.html">Cancel Order</a></li>
+                                  <li class="items"><a href="ordersummary.jsp">Order Summary</a></li>
+                                  <li class="items"><a href="index.html">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-8">
+                    <section class="right-body">
+                        <div class="card box">
+                            <div class="right-content row">
+				<div class="col-6 px-0" >
+                            <div class="right-heading">
+                                <h5>Sender Information</h5>
+                            </div>
+                            <form method="POST" action="booking.jsp" name="myForm" >
+                             
+
+                                    <div class="form-group">
+                                        <input type="text" name="f" class="input-item" id="" placeholder="Contact Name">
+                                    </div>
+                                     <div class="form-group">
+                                        <textarea name="g" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="h" class="input-item" id="" placeholder="City">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="i" class="input-item" id="" placeholder="Postal Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="j" class="input-item" id="" placeholder="Phone No.">
+                                    </div>
+                                    <div class="right-heading">
+                                        <h5>Product Details</h5>
+                                        <div class="form-group">
+                                            <input type="text" name="t" class="input-item" id="" placeholder="Type">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="w" class="input-item" id="" placeholder="Weight">
+                                        </div>
+                                    </div>
+
+                        </div>
+			<div class="col-6">
+                            <div class="right-heading">
+			      <h5>Receiver Information</h5>
+                            </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="a" class="input-item" id="" placeholder="Contact Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="b" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="c" class="input-item" id="" placeholder="City">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="d" class="input-item" id="" placeholder="Postal Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="e" class="input-item" id="" placeholder="Phone No.">
+                                    </div>
+
+</div>
+                                    <div class="form-btn col-12">
+                                        <input type="submit" name="submit" class="btn-frm" value="SUBMIT" >
+                                        <input type="reset" class="btn-frm" value="RESET" onclick="validatebill();">
+                                    </div>
+                            </div>
+                                </form>
+                        </div>
+                    </section>
+
+                </div>
+                <div class="image"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
