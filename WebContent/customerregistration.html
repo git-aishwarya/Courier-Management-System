@@ -11,22 +11,22 @@
 
 <script>
 function validatentn(){
-var ntnempty = document.myForm.ntn;
-var companyempty = document.myForm.company;
-var contactempty = document.myForm.contact;
+//var ntnempty = document.myForm.ntn;
+var companyempty = document.myForm.name;
+var contactempty = document.myForm.email;
 var addressempty = document.myForm.address;
-var countryempty = document.myForm.country;
+var passempty = document.myForm.pass;
 var cityempty = document.myForm.city;
 var postalempty = document.myForm.postal;
 var phoneempty = document.myForm.phone;
 
-if (ntnempty.value == "")
+/*if (ntnempty.value == "")
     {
         window.alert("Empty ntn no field.");
         ntnempty.focus();
         return false;
     }
-
+*/
 if (companyempty.value == "")
     {
         window.alert("Empty coustomer name field.");
@@ -45,7 +45,7 @@ if (addressempty.value == "")
         addressempty.focus();
         return false;
     }
-if (countryempty.value == "")
+if (passempty.value == "")
     {
         window.alert("Empty country field.");
         countryempty.focus();
@@ -202,7 +202,7 @@ document.myForm.submit();
     <title>Login</title>
 </head>
 
-<body>
+<body style="background-image:url('image.jpg');">
  
 
     <div class="fluid-container">
@@ -235,7 +235,7 @@ document.myForm.submit();
                             <div class="right-content">
                               <form METHOD="POST"
                                   ACTION="customerregistration.jsp"
-                                  Name="myForm">
+                                  Name="myForm" onsubmit="return validatentn();">
 
 
                                     <div class="form-group">
@@ -266,7 +266,7 @@ document.myForm.submit();
                                     </div>
                                     <div class="form-btn">
                                         <input type="submit" class="btn-frm" value="SUBMIT" name	="SUBMIT" >
-                                        <input type="reset" class="btn-frm" value="RESET" onClick='validatentn();'>
+                                        <input type="reset" class="btn-frm" value="RESET" >
                                     </div>
                                 </form>
                             </div>
