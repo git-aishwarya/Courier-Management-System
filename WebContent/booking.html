@@ -12,39 +12,35 @@
     <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script>
     function validatebill(){
 
-    var airwayno = document.myForm.a1;
-    var rrcompany = document.myForm.r1;
+    //var airwayno = document.myForm.a1;
+  //  var rrcompany = document.myForm.r1;
+
     var rrcontact = document.myForm.r2;
     var rraddress = document.myForm.r3;
-    var rrcountry = document.myForm.r4;
+   // var rrcountry = document.myForm.r4;
     var rrcity = document.myForm.r5;
     var rrpostal = document.myForm.r6;
     var rrphone = document.myForm.r7;
-    var sscompany = document.myForm.s1;
+   // var sscompany = document.myForm.s1;
     var sscontact = document.myForm.s2;
     var ssaddress = document.myForm.s3;
-    var sscountry = document.myForm.s4;
+   // var sscountry = document.myForm.s4;
     var sscity = document.myForm.s5;
     var sspostal = document.myForm.s6;
     var ssphone = document.myForm.s7;
-    var amount = document.myForm.g4;
+   // var amount = document.myForm.g4;
     var weigth = document.myForm.g2;
-    var pickup = document.myForm.g5;
+    //var pickup = document.myForm.g5;
 
 
-    if (airwayno.value == "")
+   /* if (airwayno.value == "")
         {
             window.alert("Empty airway bill no field.");
             airwayno.focus();
             return false;
-        }
-
-    if (rrcompany.value == "")
-        {
-            window.alert("Empty company name field in receiver section.");
-            rrcompany.focus();
-            return false;
-        }
+        }*/
+	
+   
     if (rrcontact.value == "")
         {
             window.alert("Empty contact name field in receiver section.");
@@ -57,12 +53,7 @@
             rraddress.focus();
             return false;
         }
-    if (rrcountry.value == "")
-        {
-            window.alert("Empty country field in receiver section.");
-            rrcountry.focus();
-            return false;
-        }
+  
     if (rrcity.value == "")
         {
             window.alert("Empty city field in receiver section.");
@@ -83,12 +74,7 @@
         }
 
 
-    if (sscompany.value == "")
-        {
-            window.alert("Empty company name field in sender section.");
-            sscompany.focus();
-            return false;
-        }
+
     if (sscontact.value == "")
         {
             window.alert("Empty contact name field in sender section.");
@@ -101,12 +87,7 @@
             ssaddress.focus();
             return false;
         }
-    if (sscountry.value == "")
-        {
-            window.alert("Empty country field in sender section.");
-            sscountry.focus();
-            return false;
-        }
+ 
     if (sscity.value == "")
         {
             window.alert("Empty city field in sender section.");
@@ -125,27 +106,28 @@
             ssphone.focus();
             return false;
         }
-    if (pickup.value == "")
+  /*  if (pickup.value == "")
         {
             window.alert("Empty picked up field.");
             pickup.focus();
             return false;
         }
 
-    if (amount.value == "" || amount.value=="NaN")
+   if (amount.value == "" || amount.value=="NaN")
         {
             window.alert("Empty total amount field.");
             weigth.focus();
             return false;
         }
+   */
 
 
 
-    var regExp = /cms((\d){8})/g;
+   /* var regExp = /cms((\d){8})/g;
     if(!regExp.test(document.myForm.a1.value)){
     alert('Invalid Airway bill no! \n\n Please enter a valid Airway bill no (e.g cms12345678)');
     return;
-    }
+    }*/
 
     var regExp1 = /\D/g;
     if(regExp1.test(document.myForm.r6.value)){
@@ -176,7 +158,7 @@
     document.myForm.submit();
     }
 
-    function mul(obj)
+   /* function mul(obj)
     {
     var a,b,c,d;
     a = parseInt(obj.form.elements['g2'].value) * parseInt(obj.form.elements['g3'].value);
@@ -188,7 +170,7 @@
     {
     alert("Please enter valid numbers");
     }
-    }
+    }*/
     </script>
 
     <script language="javascript">
@@ -366,24 +348,24 @@
                             <div class="right-heading">
                                 <h5>Sender Information</h5>
                             </div>
-                            <form method="POST" action="booking.jsp" name="myForm" >
+                            <form method="POST" action="booking.jsp" name="myForm" onsubmit="return validatebill()">
                              
 
                                     <div class="form-group">
-                                        <input type="text" name="f" class="input-item" id="" placeholder="Contact Name">
+                                        <input type="text" name="s2" class="input-item" id="" placeholder="Contact Name">
                                     </div>
                                      <div class="form-group">
-                                        <textarea name="g" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
+                                        <textarea name="s3" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="text" name="h" class="input-item" id="" placeholder="City">
+                                        <input type="text" name="s5" class="input-item" id="" placeholder="City">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="i" class="input-item" id="" placeholder="Postal Number">
+                                        <input type="text" name="s6" class="input-item" id="" placeholder="Postal Number">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="j" class="input-item" id="" placeholder="Phone No.">
+                                        <input type="text" name="s7" class="input-item" id="" placeholder="Phone No.">
                                     </div>
                                     <div class="right-heading">
                                         <h5>Product Details</h5>
@@ -391,7 +373,7 @@
                                             <input type="text" name="t" class="input-item" id="" placeholder="Type">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="w" class="input-item" id="" placeholder="Weight">
+                                            <input type="text" name="g2" class="input-item" id="" placeholder="Weight">
                                         </div>
                                     </div>
 
@@ -402,25 +384,25 @@
                             </div>
 
                                     <div class="form-group">
-                                        <input type="text" name="a" class="input-item" id="" placeholder="Contact Name">
+                                        <input type="text" name="r2" class="input-item" id="" placeholder="Contact Name">
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="b" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
+                                        <textarea name="r3" class="text-item" id="" placeholder="Address" row="5" col="5"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="c" class="input-item" id="" placeholder="City">
+                                        <input type="text" name="r5" class="input-item" id="" placeholder="City">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="d" class="input-item" id="" placeholder="Postal Number">
+                                        <input type="text" name="r6" class="input-item" id="" placeholder="Postal Number">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="e" class="input-item" id="" placeholder="Phone No.">
+                                        <input type="text" name="r7" class="input-item" id="" placeholder="Phone No.">
                                     </div>
 
 </div>
                                     <div class="form-btn col-12">
-                                        <input type="submit" name="submit" class="btn-frm" value="SUBMIT" >
-                                        <input type="reset" class="btn-frm" value="RESET" onclick="validatebill();">
+                                        <input type="submit" name="submit" class="btn-frm" value="SUBMIT">
+                                        <input type="reset" class="btn-frm" value="RESET" >
                                     </div>
                             </div>
                                 </form>
