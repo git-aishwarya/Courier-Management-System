@@ -160,14 +160,14 @@
         <% try{
         	//System.out.println(request.getParameter("orderid"));
 int n=Integer.parseInt(request.getParameter("orderid"));
-System.out.println(n);
+//System.out.println(n);
 Class.forName("com.mysql.jdbc.Driver");
 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","root","anu123456");
 Statement st=con.createStatement();
 String sql ="SELECT * FROM orderinfo where orderid='"+n+"'";
-System.out.println("a");
+//System.out.println("a");
 ResultSet rs= st.executeQuery(sql);
-System.out.println("b");
+//System.out.println("b");
 
 if(rs.next()){%>
 
@@ -259,7 +259,7 @@ if(rs.next()){%>
 <%
 con.close();
 } catch (Exception e) {
-System.out.println(e);
+out.println(e);
 }%>
     </div>
         <div class="image"></div>
