@@ -1,0 +1,115 @@
+"ID","ntn(X)","company(customer_Name)","contact(email_id)","address","country","city","postal","phone","date","first","last","total"
+
+create table customerdata(
+customer_Name VARCHAR(100) NOT NULL,
+customer_Pass VARCHAR(20) NOT NULL,
+address VARCHAR(200) NOT NULL,
+email_id VARCHAR(200) NOT NULL,
+city VARCHAR(100) NOT NULL,
+postal INT NOT NULL,
+phone VARCHAR(50) NOT NULL,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+customer_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(customer_id)
+);
+
+
+insert into customerdata(customer_Name,customer_Pass,address,email_id,city,postal,phone) values('Ritik','asd','gzb','id','gzb',123,'1234567890');
+
+create table orderInfo(
+customer_id INT NOT NULL,
+sender_name VARCHAR(100) NOT NULL,
+sender_address VARCHAR(100) NOT NULL,
+sender_city VARCHAR(100) NOT NULL,
+sender_postal VARCHAR(6) NOT NULL,
+sender_phone VARCHAR(10) NOT NULL,
+receiver_name VARCHAR(100) NOT NULL,
+receiver_address VARCHAR(100) NOT NULL,
+receiver_city VARCHAR(100) NOT NULL,
+receiver_postal VARCHAR(6) NOT NULL,
+receiver_phone VARCHAR(10) NOT NULL,
+product_type VARCHAR(100) NOT NULL,
+product_weight INT NOT NULL,
+total_amount VARCHAR(20),
+status VARCHAR(100),
+orderid INT NOT NULL AUTO_INCREMENT,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(orderid)
+); 
+insert into orderinfo(customer_id,sender_name,sender_address,sender_city,sender_postal,sender_phone,receiver_name,receiver_address,receiver_city,receiver_postal,receiver_phone,product_type,product_weight,total_amount,status)values(1,'Ric','GZB','Ghaziabad','12345','1111111','Ric','Ghaziabad','GZB','12345','1111111','xyz',20,'1211','Puckup');
+
+create table admindata(
+admin_Name VARCHAR(100) NOT NULL,
+admin_Pass VARCHAR(20) NOT NULL,
+address VARCHAR(200) NOT NULL,
+email_id VARCHAR(200) NOT NULL,
+city VARCHAR(100) NOT NULL,
+postal INT NOT NULL,
+phone VARCHAR(13) NOT NULL,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+admin_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(admin_id)
+);
+insert into admindata(admin_Name,admin_Pass,address,email_id,city,postal,phone) values('Ritik','asd','gzb','Ritik@123#','gzb',123,'1234567890');
+
+
+select * from orderinfo where createDate >= dateadd(day, datediff(day, 0, getdate()) - 1, 0) and createDate < getdate();
+
+
+
+
+Admin_Homepage
+//////////////
+->total no. of customer
+select customer_id from customerdata order by customer_id desc limit 1;
+-> Total no. of orders
+select orderid from orderinfo order by orderid desc limit 1;
+->Total Income
+SELECT SUM(total_amount)FROM orderinfo;
+->Today's new Orders
+For datetime//SELECT COUNT(*) FROM orderinfo WHERE date = 2019-08-06 23:41:23
+USE date form Datetime//SELECT COUNT(*)from orderinfo WHERE date LIKE 'TODAYDATE%';
+
+
+
+courier boy
+////////////////////////////////////////////////////////////////
+create table courierboydata(
+cboy_Name VARCHAR(100) NOT NULL,
+cboy_Pass VARCHAR(20) NOT NULL,
+address VARCHAR(200) NOT NULL,
+email_id VARCHAR(200) NOT NULL,
+city VARCHAR(100) NOT NULL,
+postal INT NOT NULL,
+phone VARCHAR(13) NOT NULL,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+cboy_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(cboy_id)
+);
+
+insert into courierboydata(cboy_Name,cboy_Pass,address,email_id,city,postal,phone,) values('Saket','asd','gzb','id','gzb',123,'1234567890');
+
+
+///////////////////////////////
+create table madmindata(
+madmin_Name VARCHAR(100) NOT NULL,
+madmin_Pass VARCHAR(20) NOT NULL,
+address VARCHAR(200) NOT NULL,
+email_id VARCHAR(200) NOT NULL,
+city VARCHAR(100) NOT NULL,
+postal INT NOT NULL,
+phone VARCHAR(13) NOT NULL,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+madmin_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(madmin_id)
+);
+
+insert into mdata(madmin_Name,madmin_Pass,address,email_id,city,postal,phone) values('Ritik','asd','gzb','id','gzb',123,'1234567890');
+
+create table contact(
+Id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+comment VARCHAR(700) NOT NULL,
+PRIMARY KEY(Id)
+);
