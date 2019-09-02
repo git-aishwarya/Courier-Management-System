@@ -132,28 +132,27 @@
     var regExp1 = /\D/g;
     if(regExp1.test(document.myForm.r6.value)){
     alert('Invalid Postal Code! \n\n Please enter a valid postal code in receiver section.');
-    return;
+    return false;
     }
 
     var regExp2 = /\D/g;
     if(regExp2.test(document.myForm.r7.value)){
     alert('Invalid Phone number! \n\n Please enter a valid phone number in receiver section.');
-    return;
+    return false;
     }
 
 
     var regExp3 = /\D/g;
     if(regExp3.test(document.myForm.s6.value)){
     alert('Invalid Postal Code! \n\n Please enter a valid postal code in sender section.');
-    return;
+    return false;
     }
 
     var regExp4 = /\D/g;
     if(regExp4.test(document.myForm.s7.value)){
     alert('Invalid Phone number! \n\n Please enter a valid phone number in sender section.');
-    return;
+    return false;
     }
-
 
     document.myForm.submit();
     }
