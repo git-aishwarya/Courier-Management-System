@@ -137,7 +137,7 @@
   <title>Customer Profile</title>
 </head>
 
-<body>
+<body style="background-image:url('image.jpeg');">
 
 
   <div class="fluid-container">
