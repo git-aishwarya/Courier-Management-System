@@ -55,7 +55,7 @@
 
     /* left content  card (shadow)*/
     .box {
-      width: 100%;
+      width: 50%;
       height: 100%;
       border: 1px solid transparent;
       border-radius: 0%;
@@ -66,7 +66,7 @@
     .right-body {
       position: relative;
       top: 10%;
-      left: 50%;
+      left: 20%;
       margin: auto;
       text-align: center;
       color: #52BA98;
@@ -137,7 +137,7 @@
   <title>Admin Profile</title>
 </head>
 
-<body>
+<body style="background-image:url('image.jpeg');">
 
 
   <div class="fluid-container">
@@ -172,25 +172,24 @@
               <div class="right-content">
  <% try{
 	 String city=(String)session.getAttribute("city");
-Class.forName("com.mysql.jdbc.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","root","anu123456");
-Statement st=con.createStatement();
-String sql ="SELECT * FROM courierboydata where city='"+city+"'";
-ResultSet rs= st.executeQuery(sql);
-while(rs.next())
-{
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","root","anu123456");
+	Statement st=con.createStatement();
+	String sql ="SELECT * FROM courierboydata where city In('gzb','lko') limit 1";
+	ResultSet rs= st.executeQuery(sql);
+	while(rs.next()){
 %>
                 <form METHOD="POST" ACTION="http://localhost:8080/myapp/contactservlet" Name="myForm" action="#" onSubmit="return checkemail(this.f2.value)">
 
                   <div class="form-group">
                     <h6>Employee ID</h6>
-                    <p style="color:black;"><%=rs.getInt("c_id")%><p>
+                    <p style="color:black;"><%=rs.getInt("cboy_id")%><p>
                   </div>
 
 
                   <div class="form-group">
                     <h6> Employee Name</h6>
-                    <p style="color:black;"><%=rs.getString("c_Name") %></p>
+                    <p style="color:black;"><%=rs.getString("cboy_Name") %></p>
                   </div>
 
                   <div class="form-group">
@@ -226,9 +225,10 @@ while(rs.next())
             </div>
           </section>
 <%}
-con.close();
-} catch (Exception e) {
-System.out.println(e);
+	con.close();
+} 
+catch (Exception e) {
+	out.println(e);
 }
 %>
         </div>
