@@ -131,7 +131,7 @@
   <title>Order Summary</title>
 </head>
 
-<body  overflow-y : auto;>
+<body  overflow-y : auto; style="background-image:url('image.jpeg');">
 
 
   <div class="fluid-container">
@@ -158,14 +158,14 @@
         <% try{
         	//System.out.println(request.getParameter("orderid"));
 int n=Integer.parseInt(request.getParameter("orderid"));
-System.out.println(n);
+//System.out.println(n);
 Class.forName("com.mysql.jdbc.Driver");
 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","root","anu123456");
 Statement st=con.createStatement();
 String sql ="SELECT * FROM orderinfo where orderid='"+n+"'";
-System.out.println("a");
+//System.out.println("a");
 ResultSet rs= st.executeQuery(sql);
-System.out.println("b");
+//System.out.println("b");
 
 if(rs.next()){%>
 
@@ -252,12 +252,13 @@ if(rs.next()){%>
 <%}else
 {
 	session.setAttribute("msg","WARNING! This order id is not present, recheck and try again.");
-	response.sendRedirect("index.jsp");
+	out.println("This order id is not present, recheck and try again.");
+	//response.sendRedirect("./index.jsp");
 }%>
 <%
 con.close();
 } catch (Exception e) {
-System.out.println(e);
+out.println(e);
 }%>
     </div>
         <div class="image"></div>
