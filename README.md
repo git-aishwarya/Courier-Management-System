@@ -61,3 +61,4 @@ o	User- The user provides courier information which includes address of pickup, 
 o	Delivery agent- The major role of the delivery agent is to get the package from pickup address mentioned by the user, and take it to the warehouses. Also, when a consignment reaches one of the warehouses, it is the duty of a delivery agent to deliver the package to the destination address mentioned by the user. 
 
 # Architecture diagram  
+![image](WebContent/Picture1.png)
