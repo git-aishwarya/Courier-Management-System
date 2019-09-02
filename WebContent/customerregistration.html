@@ -20,13 +20,7 @@ var cityempty = document.myForm.city;
 var postalempty = document.myForm.postal;
 var phoneempty = document.myForm.phone;
 
-/*if (ntnempty.value == "")
-    {
-        window.alert("Empty ntn no field.");
-        ntnempty.focus();
-        return false;
-    }
-*/
+
 if (companyempty.value == "")
     {
         window.alert("Empty coustomer name field.");
@@ -72,13 +66,13 @@ if (phoneempty.value == "")
 var regExp1 = /\D/g;
 if(regExp1.test(document.myForm.postal.value)){
 alert('Invalid Postal Code! \n\n Please enter a valid postal code.');
-return;
+return false;
 }
 
 var regExp2 = /\D/g;
 if(regExp2.test(document.myForm.phone.value)){
 alert('Invalid Phone number! \n\n Please enter a valid phone number.');
-return;
+return false;
 }
 
 document.myForm.submit();
@@ -202,7 +196,7 @@ document.myForm.submit();
     <title>Login</title>
 </head>
 
-<body style="background-image:url('image.jpg');">
+<body style="background-image:url('image.jpeg');">
  
 
     <div class="fluid-container">
