@@ -49,6 +49,6 @@ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","ro
 catch(Exception ex)
 {
 //System.out.println("Error :"+ ex.getMessage());
-System.out.println("Wrong input details");
+out.println("Error :"+ ex + "Wrong input details");
 }
 %>
