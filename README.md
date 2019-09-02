@@ -6,8 +6,8 @@ The Courier Management System is a project to automate the courier industry by d
 The main idea of the project is to maintain and handle all functions involved, from booking a courier to its delivery or return, which can be tedious; if done manually. 
 It will also aim at providing a clear picture of how the entire process is taking place stepwise so that the chances of frauds and errors can be minimized.
 CMS will fulfill the purpose of providing easy accessibility to its customers. 
-In this project, the users will be allowed to book a courier, and have a delivery agent pick it from their doorstep. Customers will have the privilege of specifying the date and time at which they want their product to be picked up. 
-Apart from this, CMS will provide a tracking system through which one can track their shipments, get updated of the status of their consignments at all times. The users will receive all updates by email on their phones at all times.
+In this project, the users will be allowed to book a courier, and have a delivery agent pick it from their doorstep.
+Apart from this, CMS will provide a tracking system through which one can track their shipments, get updated of the status of their consignments at all times.
 Automation is the need of the hour in today’s fast growing world. Hence, this project will prove to be a boon to the courier industry by imparting transparency and easy accessibility of all the services. Due to the development of modern communication and requirement of courier facilities, the Courier Management System can be used as a complete system or separate modules depending on the business requirement.
 
 ## Scopes:-
@@ -62,3 +62,6 @@ o	Delivery agent- The major role of the delivery agent is to get the package fro
 
 # Architecture diagram  
 ![image](WebContent/Picture1.png)
+
+## for detail description
+https://drive.google.com/open?id=1gqFOE77zmlLlYrV37Hwd2VUuZJtl7k_7
