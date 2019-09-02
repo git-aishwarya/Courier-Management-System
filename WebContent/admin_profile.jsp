@@ -55,7 +55,7 @@
 
     /* left content  card (shadow)*/
     .box {
-      width: 100%;
+      width: 60%;
       height: 100%;
       border: 1px solid transparent;
       border-radius: 0%;
@@ -66,7 +66,7 @@
     .right-body {
       position: relative;
       top: 10%;
-      left: 50%;
+      left: 20%;
       margin: auto;
       text-align: center;
       color: #52BA98;
@@ -137,7 +137,7 @@
   <title>Admin Profile</title>
 </head>
 
-<body>
+<body style="background-image:url('image.jpeg');">
 
 
   <div class="fluid-container">
