@@ -136,7 +136,7 @@ body {
 <title>CourierBoy Homepage</title>
 </head>
 
-<body>
+<body style="background-image:url('image.jpeg');">
 
 
 	<div class="fluid-container">
@@ -169,6 +169,7 @@ body {
 						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "anu123456");
 						Statement st = con.createStatement();
 						String sql1 = "SELECT COUNT(*)AS rowcount from orderinfo WHERE sender_city='"+city+"' and status is null ";
+						
 						ResultSet rs = st.executeQuery(sql1);
 						rs.next();
 						int count = rs.getInt("rowcount");
