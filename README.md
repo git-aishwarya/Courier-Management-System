@@ -59,3 +59,5 @@ The administrator deals with the management, development and maintenance of the 
 
 o	User- The user provides courier information which includes address of pickup, destination address, weight of the item, and other consignment details. The process of delivery starts after payment during which the user can view the consignment status, track his/her package by the tracking ID allotted to them by the administrator, or cancel it altogether. User also gets the details of pickup agent in order to minimize the chances of fraud.  
 o	Delivery agent- The major role of the delivery agent is to get the package from pickup address mentioned by the user, and take it to the warehouses. Also, when a consignment reaches one of the warehouses, it is the duty of a delivery agent to deliver the package to the destination address mentioned by the user. 
+
+# Architecture diagram  
